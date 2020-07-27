@@ -1,7 +1,7 @@
 const frisby = require('frisby')
 const insecurity = require('../../lib/insecurity')
 const config = require('config')
-
+//
 const christmasProduct = config.get('products').filter(({ useForChristmasSpecialChallenge }) => useForChristmasSpecialChallenge)[0]
 const pastebinLeakProduct = config.get('products').filter(({ keywordsForPastebinDataLeakChallenge }) => keywordsForPastebinDataLeakChallenge)[0]
 
