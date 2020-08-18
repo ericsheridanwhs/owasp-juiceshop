@@ -8,6 +8,7 @@ const pastebinLeakProduct = config.get('products').filter(({ keywordsForPastebin
 const API_URL = 'http://localhost:3000/api'
 const REST_URL = 'http://localhost:3000/rest'
 
+
 describe('/rest/products/search', () => {
   it('GET product search with no matches returns no products', () => {
     return frisby.get(REST_URL + '/products/search?q=nomatcheswhatsoever')
