@@ -2,6 +2,7 @@ const utils = require('../lib/utils')
 const models = require('../models/index')
 const challenges = require('../data/datacache').challenges
 
+
 module.exports = function searchProducts () {
   return (req, res, next) => {
     let criteria = req.query.q === 'undefined' ? '' : req.query.q || ''
