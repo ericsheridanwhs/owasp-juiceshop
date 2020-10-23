@@ -3,10 +3,10 @@
   text-justify: inter-word;
 }
 
-:host /deep/ h1 a {
+:host h1 a {
   font-size: 20px;
 }
 
-:host /deep/ strong {
+:host strong {
   font-style: italic;
 }
