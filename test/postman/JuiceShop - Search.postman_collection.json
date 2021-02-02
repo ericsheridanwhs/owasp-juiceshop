@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "98ebea13-4ba1-430f-99d5-93d74f16b687",
+		"name": "JuiceShop - Search",
+		"description": "Exercise the product search API within the [OWASP Juiceshop](https://owasp.org/www-project-juice-shop/) application. This collection is simply used as an example to demonstrate the capabilities of API Security Tester.\n\n**This collection is not actively maintained nor does it offer any features or capabilities related to API security testing.**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Search for Apple Juice",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/rest/products/search?q=Apple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rest",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Apple"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search for Orange Juice",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/rest/products/search?q=Orange",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rest",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Orange"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search for Everything",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/rest/products/search?q=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rest",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
