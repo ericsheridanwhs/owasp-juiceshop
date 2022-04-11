@@ -24,7 +24,7 @@ pipeline {
             }
             post {
                 always {
-                    sh "pkill node"
+                    sh "pkill node || true"
                 }
             }
         }
