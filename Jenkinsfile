@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/ericsheridanwhs/owasp-juiceshop'
                 sh 'npm install --force'
             }
         }
@@ -29,6 +28,5 @@ pipeline {
                 }
             }
         }
-        
     }
 }
