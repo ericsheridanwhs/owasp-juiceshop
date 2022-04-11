@@ -36,7 +36,7 @@ pipeline {
                     for f in test/postman/*.postman_collection.json; do
                         [ -f "\$f" ] || continue
                         echo running security test: "\$f"
-                        dast-attacker-cli -allowed-host http://localhost:3000 -license-key=$(WHITEHAT_LICENSE_KEY) -fail-on-severity=high "\$f"
+                        dast-attacker-cli -allowed-host http://localhost:3000 -license-key=${WHITEHAT_LICENSE_KEY} -fail-on-severity=high "\$f"
                     done
                 """
             }
