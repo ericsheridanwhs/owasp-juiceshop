@@ -5,6 +5,11 @@ pipeline {
         JENKINS_NODE_COOKIE="dontKillMe"
     }
     stages {
+        stage('Setup') {
+            steps {
+                sh 'sudo npm install -g newman'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install --force'
