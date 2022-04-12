@@ -30,8 +30,15 @@ pipeline {
         }
         stage('SecurityTests') {
             steps {
+                // install vantage prevent
+                sh "wget https://github.com/whitehatsec/vantage-prevent-distributions/releases/latest/download/VantagePrevent.deb"
+                sh "sudo apt install -f ./VantagePrevent.deb"
+
+                // start target app
                 sh "npm start &"
                 sh "while ! curl -s -o /dev/null http://127.0.0.1:3000/rest/user/login; do sleep 1; done"
+
+                // run vantage prevent against target app using postman collections as input
                 sh """
                     for f in test/postman/*.postman_collection.json; do
                         [ -f "\$f" ] || continue
