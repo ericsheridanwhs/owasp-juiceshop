@@ -17,8 +17,11 @@ pipeline {
         }
         stage('IntegrationTests') {
             steps {
+                // start target app
                 sh "npm start &"
                 sh "while ! curl -s -o /dev/null http://127.0.0.1:3000/rest/user/login; do sleep 1; done"
+
+                // run newman integration tests against target app using postman collections
                 sh """
                     for f in test/postman/*.postman_collection.json; do
                         [ -f "\$f" ] || continue
