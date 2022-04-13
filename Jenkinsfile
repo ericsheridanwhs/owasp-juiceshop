@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm install --force'
+                sh 'npm install'
             }
         }
         stage('IntegrationTests') {
@@ -38,9 +38,9 @@ pipeline {
         }
         stage('SecurityTests') {
             steps {
-                // install vantage prevent
-                sh "wget https://github.com/whitehatsec/vantage-prevent-distributions/releases/latest/download/VantagePrevent.deb"
-                sh "sudo apt install -f ./VantagePrevent.deb"
+                // (optional) install vantage prevent
+                // sh "wget https://github.com/whitehatsec/vantage-prevent-distributions/releases/latest/download/VantagePrevent.deb"
+                // sh "sudo apt install -f ./VantagePrevent.deb"
 
                 // start target app
                 sh "npm start &"
