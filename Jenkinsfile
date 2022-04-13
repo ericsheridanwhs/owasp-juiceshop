@@ -38,7 +38,7 @@ pipeline {
         }
         stage('SecurityTests') {
             steps {
-                // (optional) install vantage prevent
+                // (optional) only required if vantage prevent is not already installed on host
                 // sh "wget https://github.com/whitehatsec/vantage-prevent-distributions/releases/latest/download/VantagePrevent.deb"
                 // sh "sudo apt install -f ./VantagePrevent.deb"
 
