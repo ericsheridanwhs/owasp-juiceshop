@@ -40,7 +40,7 @@ pipeline {
             steps {
                 // (optional) only required if vantage prevent is not already installed on host
                 // sh "wget https://github.com/whitehatsec/vantage-prevent-distributions/releases/latest/download/VantagePrevent.deb"
-                // sh "sudo apt install -f ./VantagePrevent.deb"
+                // sh "sudo apt install -y -f ./VantagePrevent.deb"
 
                 // start target app
                 sh "npm start &"
